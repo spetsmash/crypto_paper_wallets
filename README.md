@@ -3,20 +3,20 @@ A simple paper wallet generator for Ethereum net.
 
  Run project
 
-    Run
+Run
 
 ```
 npm install
 ```
 
-    You need to verify public key (make sure that you have gpg installed).
-    In order to do it, just run the next code in the console:
+You need to verify public key (make sure that you have gpg installed).
+In order to do it, just run the next code in the console:
+    
 ```
 gpg --verify index.html.sig
 ```
 
-
-    Then you will see something like this
+Then you will see something like this
 
 ```
     gpg: assuming signed data in 'index.html'
@@ -25,17 +25,19 @@ gpg --verify index.html.sig
      gpg: Can't check signature: No public key
 ```
 
-    The next step:
+The next step:
+    
 ```
 gpg --no-default-keyring --keyring vendors.gpg --keyserver pgp.mit.edu --recv-key RSA_key_ID
 ```
 
-    for previous example it will be
+for previous example it will be
+    
 ```
 gpg --no-default-keyring --keyring vendors.gpg --keyserver pgp.mit.edu --recv-key E3A5CD636B210365
 ```
 
-    The response will be
+The response will be
 
 ```
     gpg: requesting key 9741E8AC from hkp server pgp.mit.edu
@@ -46,19 +48,18 @@ gpg --no-default-keyring --keyring vendors.gpg --keyserver pgp.mit.edu --recv-ke
      gpg: imported: 1 (RSA: 1)
 ```
 
-     Next:
+Next:
 
 ```
    gpg --verify --verbose --keyring vendors.gpg index.html.sig
 ```
 
-
-     Run
+Run
 
 ```
 gulp
 ```
 
-     Open index.html file in the browser
+Open index.html file in the browser
 
 
