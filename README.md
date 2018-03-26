@@ -1,5 +1,5 @@
 
-A simple paper wallet generator for Ethereum.
+A simple paper wallet generator for Ethereum net.
 
  Run project
 
