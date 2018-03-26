@@ -1,7 +1,7 @@
 
 A simple paper wallet generator for Ethereum net.
 
- Run project
+##### Run project
 
 Run
 
