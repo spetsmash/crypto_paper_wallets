@@ -1,5 +1,5 @@
 
-###A simple paper wallet generator for Ethereum.
+A simple paper wallet generator for Ethereum.
 
  Run project
 
@@ -51,7 +51,7 @@ gpg --no-default-keyring --keyring vendors.gpg --keyserver pgp.mit.edu --recv-ke
 ```
    gpg --verify --verbose --keyring vendors.gpg index.html.sig
 ```
- 
+
 
      Run
 
