@@ -1,0 +1,67 @@
+<div class="row screen-only">
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel red">
+        <span class="white-text"><b>WARNING:</b> Brain wallets are only as safe as the phrases you use to generate them. If you generate a seven word phrase using  <a href="https://en.wikipedia.org/wiki/Diceware" class="red-text text-lighten-4" target="_blank">diceware</a>, you'll probably be fine. If you use a line from Dostoevsky, or from an obscure poem, or from anything else that has <b>ever</b> (or <b>might</b> have ever) been rendered in print, though, <a href="http://www.palkeo.com/code/stealing-bitcoin.html" class="red-text text-lighten-4" target="blank">you're going to have a bad time</a>. <a href="http://world.std.com/~reinhold/diceware.html" class="red-text text-lighten-4">Arnold Reinhold's website</a> contains detailed information in multiple languages on how to generate secure diceware-based passphrases.</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <label for="walletPhrase">Wallet Phrase</label><input type="{{ showPhrase ? 'text' : 'password' }}" ng-model="walletPhrase" placeholder="Do not forget this!" />
+    </div>
+    <div class="col s12">
+      <input type="checkbox" ng-model="showPhrase" ng-init="showPhrase=false" id="showPhrase" /><label for="showPhrase">Show wallet phrase</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+    <select class="input-field" ng-model="walletArt" ng-init="walletArt='earth'" material-select>
+      <option value="earth">Earth</option>
+      <option value="none">No wallet art</option>
+    </select>
+  </div>
+    <div class="col s12" ng-hide="walletArt=='none'">
+      <input type="checkbox" ng-model="showBack" ng-init="showBack=true" id="showBack"/><label for="showBack">Show wallet back</label>
+    </div>
+  </div>
+  <div class="row col s12">
+    <input type="checkbox" ng-model="hideKey" ng-init="hideKey=true" id="hideKey" /><label for="hideKey">Omit private key from wallet</label>
+  </div>
+  <div class="row">
+    <div class="col m3 s12">
+        <button class="btn-large green col s12 row" ng-click="generateWallet()">Generate wallet!</button>
+    </div>
+    <div class="col m1 s12" ng-show="address && private">
+      <a class="col row s12 small btn-large blue print" ng-click="print()"></a>
+    </div>
+    <div class="col m1 s12" ng-show="address && private">
+      <a class="col row s12 small btn-large blue download" ng-click="exportKey()"></a>
+    </div>
+</div>
+<div class="row screen-only wallet-info" ng-show="address && private">
+  <p>Address: {{address}}</p>
+  <p>Private Key: <span ng-hide="showPrivate" ng-mouseover="showPrivate=true">{{obfuscate(private)}}</span>
+              <span ng-show="showPrivate" ng-mouseout="showPrivate=false">{{private}}</span>
+  </p>
+</div>
+<div class="row" ng-show="address && private">
+  <div class="row single paperwallet front">
+    <div class="art col s12">
+      <css-img class="wallet-image" ng-class="{'no-art': walletArt === 'none'}"></css-img>
+      <icon-identicon class="identicon" code="{{address}}" size="81"></icon-identicon>
+      <qrcode class="address-qr" size="80" data="{{address}}"></qrcode>
+      <qrcode class="privatekey-qr" size="133" version="8" ng-if="!hideKey" data="{{private}}"></qrcode>
+      <div class="privatekey-qr red-x" ng-if="hideKey && walletArt !== 'none'"></div>
+      <div class="address-text-box"><span class="address-text">{{address}}</span></div>
+      <div class="privatekey-text-box top" ng-if="!hideKey"><span class="privatekey-text">{{private}}</span></div>
+      <div class="privatekey-text-box bottom" ng-if="!hideKey"><span class="privatekey-text">{{private}}</span></div>
+    </div>
+  </div>
+  <div class="page-break" ng-if="showFront && showBack" />
+  <div class="row single paperwallet back" ng-show="showBack && walletArt !== 'none'">
+    <div class="art col s12">
+      <css-img class="wallet-image" ng-class="{'no-art': walletArt === 'none'}"></css-img>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+#nav-mobile-button { margin-left: 1em; }
+.paperwallet.back { float: left; }
+.single.paperwallet {
+  transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform-origin: left bottom;
+  -moz-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+  -webkit-transform-origin: left bottom;
+  -o-transform-origin: left bottom;
+}
+
+.single.paperwallet.front { top: -360px; }
+.single.paperwallet.back { top: 330px; }
+
+.single.paperwallet .art .wallet-image {
+    background-position: left 2px top;
+} 
