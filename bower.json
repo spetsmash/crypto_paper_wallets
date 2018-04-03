@@ -1,9 +1,9 @@
 {
-  "name": "ethaddress.org",
+  "name": "paperwallet",
   "version": "0.0.0",
-  "homepage": "https://github.com/ryepdx/ethaddress.org",
+  "homepage": "https://github.com/spetsmash/crypto_paper_wallets",
   "authors": [
-    "Ryan Casey <ryepdx@gmail.com>"
+    "draglet"
   ],
   "description": "A paper wallet utility for Ethereum.",
   "main": "src/app.js",
