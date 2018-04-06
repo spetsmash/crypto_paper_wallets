@@ -5,9 +5,9 @@
       <option value="none">No wallet art</option>
     </select>
   </div>
-  <div class="row col s12">
-    <input type="checkbox" ng-model="showBack" ng-init="showBack=true" id="showBack"/><label for="showBack">Show wallet back</label>
-  </div>
+  <!--<div class="row col s12">-->
+    <!--<input type="checkbox" ng-model="showBack" ng-init="showBack=true" id="showBack"/><label for="showBack">Show wallet back</label>-->
+  <!--</div>-->
   <div class="row col s12">
     <input type="checkbox" ng-model="usePassword" id="usePassword" /><label for="usePassword">Encrypt wallets</label>
   </div>
@@ -38,13 +38,14 @@
     <qrcode class="address-qr" size="80" data="{{wallet.address}}"></qrcode>
     <qrcode class="privatekey-qr" size="133" version="8" data="{{wallet.private}}"></qrcode>
     <div class="address-text-box"><span class="address-text">{{wallet.address}}</span></div>
-    <div class="privatekey-text-box top" ng-if="!wallet.encrypted"><span class="privatekey-text">{{wallet.private}}</span></div>
-    <div class="privatekey-text-box bottom" ng-if="!wallet.encrypted"><span class="privatekey-text">{{wallet.private}}</span></div>
+    <div class="privatekey-text-box top" ng-style="{width: wallet.encrypted ? '100%' : '450px', 'left': wallet.encrypted ? '138px' : '552px'}"><span class="privatekey-text">{{wallet.private}}</span></div>
+    <div class="privatekey-text-box bottom" ng-style="{width: wallet.encrypted ? '100%' : '450px', 'left': wallet.encrypted ? '138px' : '552px'}"F><span class="privatekey-text">{{wallet.private}}</span></div>
   </div>
+
 </div>
-<div class="page-break" ng-if="showBack && walletArt !== 'none'" />
-<div class="row single paperwallet back" ng-show="showBack && walletArt !== 'none'">
-  <div class="art col s12">
-    <css-img class="wallet-image" ng-class="{'no-art': walletArt === 'none'}"></css-img>
-  </div>
+<!--<div class="page-break" ng-if="showBack && walletArt !== 'none'" />-->
+<!--<div class="row single paperwallet back" ng-show="showBack && walletArt !== 'none'">-->
+  <!--<div class="art col s12">-->
+    <!--<css-img class="wallet-image" ng-class="{'no-art': walletArt === 'none'}"></css-img>-->
+  <!--</div>-->
 </div>

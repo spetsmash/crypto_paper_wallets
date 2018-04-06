@@ -16,7 +16,7 @@
 }
 
 .paperwallet .art .wallet-image {
-  width: 1010px;
+  width: 1041px;
   height: 331px;
 }
 
@@ -82,7 +82,7 @@
 
 .paperwallet .art .privatekey-qr {
     top: 97px;
-    left: 834px;
+    left: 867px;
     filter: blur(4px);
     -moz-filter: blur(4px);
     -webkit-filter: blur(4px);
